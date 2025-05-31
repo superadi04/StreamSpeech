@@ -1,5 +1,5 @@
 global_cmvn:
-  stats_npz_path: /data/zhangshaolei/StreamSpeech/configs/fr-en/gcmvn.npz
+  stats_npz_path: /root/StreamSpeech/configs/fr-en/gcmvn.npz
 input_channels: 1
 input_feat_per_channel: 80
 specaugment:
@@ -10,11 +10,11 @@ specaugment:
   time_mask_p: 1.0
   time_wrap_W: 0
 transforms:
-  '*':
-  - global_cmvn
+  "*":
+    - global_cmvn
   _train:
-  - global_cmvn
-  - specaugment
+    - global_cmvn
+    - specaugment
 vocoder:
   checkpoint: /data/zhangshaolei/pretrain_models/unit-based_HiFi-GAN_vocoder/mHuBERT.layer11.km1000.en/g_00500000
   config: /data/zhangshaolei/pretrain_models/unit-based_HiFi-GAN_vocoder/mHuBERT.layer11.km1000.en/config.json
